@@ -10,11 +10,46 @@
         <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
         <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
         <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <style>
+            /* Color de fondo celeste y texto azul en el header */
+            .navbar {
+                background-color: #00bcd4; /* Celeste */
+            }
+
+            .navbar-brand, .nav-link {
+                color: #003366 !important; /* Azul oscuro */
+            }
+
+            .nav-link:hover {
+                color: #ff4081 !important; /* Rosa en hover */
+            }
+
+            /* Estilo para los botones */
+            .btn-dark {
+                background-color: #003366; /* Azul oscuro */
+                border-color: #003366;
+            }
+
+            .btn-dark:hover {
+                background-color: #00bcd4; /* Celeste en hover */
+                border-color: #00bcd4;
+            }
+
+            /* Footer */
+            footer {
+                background-color: #003366; /* Azul oscuro */
+            }
+
+            footer .text-white {
+                color: #ffffff;
+            }
+        </style>
     </head>
+
     <body>
 
         <header th:fragment="header" class="header">
-            <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
                 <div class="container-fluid">
                     <a th:href="@{/}" class="navbar-brand">Farmacia</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +61,7 @@
                                 <a class="nav-link active" th:href="@{/farmacia/listado}">Listado de Productos
                                     <span class="visually-hidden">(current)</span>
                                 </a>
-                            </li> <!-- Cierre del primer li -->
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" th:href="@{/farmacia/formulario}">Formulario de Satisfacción</a>
                             </li>
@@ -91,4 +126,5 @@
 
     </body>
 </html>
+
 
