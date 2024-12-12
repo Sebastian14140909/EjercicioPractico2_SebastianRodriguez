@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Satisfacción</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Enlace al archivo CSS -->
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/webjars/font-awesome/css/all.css}" rel="stylesheet"/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a th:href="@{/}" class="navbar-brand">Farmacia</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/farmacia/listado}">Listado de Farmacias</a> <!-- Corrección en el enlace -->
+                        </li>
+                    </ul>               
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <h2>Formulario de Satisfacción</h2>
+    <form action="/farmacia/enviar-satisfaccion" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="puntuacion">Puntuación:</label>
+        <input type="number" id="puntuacion" name="puntuacion" min="1" max="5" required>
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios"></textarea> <!-- Cambiado a opcional -->
+        <button type="submit">Enviar</button>
+    </form>
+
+    <footer th:replace="~{layout/plantilla :: footer}"></footer>
+</body>
+</html>

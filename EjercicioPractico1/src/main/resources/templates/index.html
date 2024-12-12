@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout/plantilla :: head}">
+    <title>Farmacia</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+    <header th:replace="~{layout/plantilla :: header}"></header>
+
+    <h1>Bienvenido a su pagina de eventos de confianza</h1>
+    <p>En nuestra pagina vas a encontrar todos los eventos dispobibles .</p>
+
+    <h2>Eventos disponibles</h2>
+    <ul>
+        <li>Conciertos</li>
+        <li>Cine</li>
+        <li>Baile</li>
+    </ul>
+
+    
+
+    <footer th:replace="~{layout/plantilla :: footer}"></footer>
+</body>
+</html>
